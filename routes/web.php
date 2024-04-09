@@ -29,20 +29,3 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-
-Route::group(['middleware' => 'guest'], function () {
-    Route::get('/register', [UserController::class, 'create']);
-
-    Route::post('/register', [UserController::class, 'store'])->name('register');
-
-    Route::get('/login', [AuthController::class, 'login'])->name('login');
-    Route::post('/login', [AuthController::class, 'auth'])->name('auth');
-
-    Route::get('/forgotten-password', [PasswordResetController::class, 'request'])->name('forgotten.password');
-    Route::post('/forgotten-password', [PasswordResetController::class, 'sendResetPasswordEmail'])->name('password.email');
-
-    Route::get('/password-reset', [PasswordResetController::class, 'reset'])->name('password.reset');
-    Route::post('/password-reset', [PasswordResetController::class, 'update'])->name('password.update');
-
-
-});
