@@ -6,6 +6,16 @@ use Illuminate\Http\Request;
 
 class HomePageController extends Controller
 {
+
+    /*
+        function __construct()
+        {
+            $this->middleware('auth');
+        }
+    */
+
+
+
     /**
      * Handle the incoming request.
      */
